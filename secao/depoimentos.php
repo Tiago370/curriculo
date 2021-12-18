@@ -2,7 +2,7 @@
 	    <div class="container">
 			<div class="section-header">
                 <h2 class="section-title text-center wow fadeInDown">Depoimentos</h2>
-                <p class="text-center wow fadeInDown">Estes depoimentos são fakes e só existem na cabeça do Tiago.</p>
+                <p class="text-center wow fadeInDown">Todos os sites tem comentários falsos, e nesse não seria diferente. Confira os depoimentos que nunca existiram de pessoas que também não existem.</p>
             </div>
 			    <div class="row">
 					<div class="col-md-4">

@@ -1,18 +1,22 @@
-<?php
-    //
-    require('head.php');
-    require('banner.php');
-    //require('texto.php');
-    //require('interesses.php');
-    require('sobre_eu.php');
-    //require('outros_interesses.php');
-    //require('portfolio.php');
-    //require('nosso_time.php');
-    //require('estatistica_do_site.php');
-    //require('planos.php');
-    //require('depoimentos.php');
-    //require('contato.php');
-    require('footer.php');
+<?php    
+    require('secao.php');
+    require('secao/head.php');
+/*    foreach($secoes as $indice => $sec){
+        if($sec["body"]){
+            $mode = "secao";
+            include('secao/'.$sec["file"].'.php');
+        }
+    }
+*/
+    foreach($ordem_secoes as $sec){
+        if($secoes[$sec]['body']){
+            $mode = "secao";
+            include('secao/'.$secoes[$sec]["file"].'.php');
+        }
+    }
+
+
+    require('secao/footer.php');
 
 ?>
 
