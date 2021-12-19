@@ -1,7 +1,7 @@
 <?php    
     $secoes = array(
         "home" => array("nome" => "Home", "id" => "hero-banner","file" => "banner", "navbar" => true, "body" => true),
-        "distancia" => array("nome" => "Calcular Distância", "id" => "hero-text","file" => "distancia", "navbar" => false, "body" => true),
+        "distancia" => array("nome" => "Calcular Distância", "id" => "hero-text","file" => "distancia", "navbar" => true, "body" => true),
         "interesses" => array("nome" => "Interesses", "id" => "features","file" => "interesses", "navbar" => false, "body" => false),
         "sobre_eu" => array("nome" => "Sobre Eu", "id" => "about","file" => "sobre_eu", "navbar" => true, "body" => true),
         "outros_interesses" => array("nome" => "Outros Interesses", "id" => "services","file" => "outros_interesses", "navbar" => false, "body" => false),

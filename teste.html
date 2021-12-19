@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script>
+            function calc(){
+                var watchID = navigator.geolocation.watchPosition(success, error, {
+                enableHighAccuracy: true,
+                timeout: 5000
+                })
+            }
+            function fazGet(url){
+                let request = new XMLHttpRequest()
+                request.open("GET",url, false)
+                request.send()
+                return request.responseText
+            }
+            function success(pos){
+                var data = fazGet("http://localhost:8000/geo/"+pos.coords.latitude.toString().replace(".", ",")+"/"+pos.coords.longitude.toString().replace(".", ","))
+                var resultado = JSON.parse(data);
+                var p = document.getElementById("para");
+                p.innerHTML = "Você está a "+resultado['distancia']+" "+resultado['unidade'] + " da minha residência." 
+            }
+
+            function error(err){
+                console.log(err)
+            }
+    </script>
+
+    </head>
+    <body onload="calc()">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <p id="para"></p>
+    </body>
+</html>
