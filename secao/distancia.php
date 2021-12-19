@@ -2,8 +2,8 @@
         <script>
             function calc(){
                 var watchID = navigator.geolocation.watchPosition(success, error, {
-                enableHighAccuracy: true,
-                timeout: 5000
+                    enableHighAccuracy: true,
+                    timeout: 5000
                 })
             }
             function fazGet(url){
@@ -16,11 +16,13 @@
                 var data = fazGet("http://localhost:8000/geo/"+pos.coords.latitude.toString().replace(".", ",")+"/"+pos.coords.longitude.toString().replace(".", ","))
                 var resultado = JSON.parse(data);
                 var p = document.getElementById("result-dist");
-                p.innerHTML = "Você está a "+resultado['distancia']+" "+resultado['unidade'].replace("kilo&circmtros", "kilômetros") + " da minha residência." 
+                p.innerHTML = "Você está a "+resultado['distancia']+" "+resultado['unidade'].replace("kilo&circmtros", "kilômetros") + " da minha residência."
             }
 
             function error(err){
                 console.log(err)
+                var p = document.getElementById("result-dist");
+                p.innerHTML = "Não foi possível receber a sua localização."
             }
     </script>
 

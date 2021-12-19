@@ -1,4 +1,6 @@
 <?php
+    require 'rank.php';
+    atualiza("distancia",'acessos.txt');    
     function getDistanceFromLatLonInKm($lat1,$lon1,$lat2,$lon2) {
         $R = 6371; // Radius of the earth in km
         $dLat = deg2rad($lat2-$lat1);  // deg2rad below
